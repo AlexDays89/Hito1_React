@@ -8,7 +8,7 @@ import { faEye, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 function CardPizza({ imagen, titulo, ingredientes, precio}) {
     return (
         <Card style={{ width: '18rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <Card.Img variant="top" src={imagen} />
+            <Card.Img variant="top" src={imagen} alt={`Pizza ${titulo}`} />
             <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
                     <Card.Title className="text-center">Pizza {titulo}</Card.Title>
