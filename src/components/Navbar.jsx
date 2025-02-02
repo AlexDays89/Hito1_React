@@ -18,16 +18,16 @@ const Navbar = () => {
             <div className="links d-flex gap-3 align-items-center">
                 <p className="fw-bold">Pizzería Mamma Mia!</p>
 
-                <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faPizzaSlice} /> Home</>} link="#"/>
+                <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faPizzaSlice} /> Home</>}/>
                 {token ? (
                     <>
-                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLockOpen} /> Profile</>} link="#" />
-                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLockOpen} /> Logout</>} link="#" onClick={handleLoginLogout} />
+                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLockOpen} /> Profile</>} />
+                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLockOpen} /> Logout</>} onClick={handleLoginLogout} />
                     </>
                 ) : (
                     <>
-                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLock} /> Login</>} link="#" onClick={handleLoginLogout} />
-                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLock} /> Register</>} link="#" />
+                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLock} /> Login</>} onClick={handleLoginLogout} />
+                        <Boton variante="outline-light text-light" texto={<><FontAwesomeIcon icon={faLock} /> Register</>} />
                     </>
                 )}
             </div>
