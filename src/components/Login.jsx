@@ -27,10 +27,9 @@ const Login = ({ onLoginSuccess }) => {
     setError(false);
     setMensaje('Ingreso Exitoso');
 
-    // Esperar 2 segundos antes de redirigir
     setTimeout(() => {
       onLoginSuccess();
-    }, 2000); // 2000 ms = 2 segundos
+    }, 2000);
   };
 
   return (

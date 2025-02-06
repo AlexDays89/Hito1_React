@@ -34,7 +34,6 @@ const Register = ({ onRegisterSuccess }) => {
     setError(false);
     setMensaje('Registro Exitoso');
 
-    // Esperar 2 segundos antes de redirigir
     setTimeout(() => {
       onRegisterSuccess();
     }, 2000);
