@@ -3,17 +3,16 @@ import React, { useState } from "react";
 import '../styles/Register.css';
 import Boton from './Boton';
 
-const Register = ({ onRegisterSuccess }) => {
+const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmarpassword, setConfirmarpassword] = useState('');
   const [error, setError] = useState(false);
   const [mensaje, setMensaje] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!username.trim() || !password.trim() || !confirmarpassword.trim()) {
+    if (!username.trim() || !password.trim()) {
       setError(true);
       setMensaje('Todos los campos son obligatorios');
       return;
@@ -21,28 +20,22 @@ const Register = ({ onRegisterSuccess }) => {
 
     if (password.length < 6) {
       setError(true);
-      setMensaje('La contraseña debe tener al menos 6 caracteres');
-      return;
-    }
-
-    if (password !== confirmarpassword) {
-      setError(true);
-      setMensaje('Las contraseñas no coinciden');
+      setMensaje('Contraseña incorrecta');
       return;
     }
 
     setError(false);
-    setMensaje('Registro Exitoso');
+    setMensaje('Ingreso Exitoso');
 
     // Esperar 2 segundos antes de redirigir
     setTimeout(() => {
-      onRegisterSuccess();
-    }, 2000);
+      onLoginSuccess();
+    }, 2000); // 2000 ms = 2 segundos
   };
 
   return (
     <form onSubmit={handleSubmit} className="contenedor-login">
-      <h1>REGISTRO</h1>
+      <h1>LOG-IN</h1>
 
       <div className="input p-field p-fluid">
         <label htmlFor="username">e-Mail</label>
@@ -66,18 +59,7 @@ const Register = ({ onRegisterSuccess }) => {
         />
       </div>
 
-      <div className="input p-field p-fluid">
-        <label htmlFor="confirmarpassword">Confirmar Password</label>
-        <InputText
-          placeholder="Confirmar Contraseña"
-          type="password"
-          id="confirmarpassword"
-          value={confirmarpassword}
-          onChange={(e) => setConfirmarpassword(e.target.value)}
-        />
-      </div>
-
-      <Boton variante="outline-dark text-dark" texto="Registro" type="submit" size="lg" />
+      <Boton variante="outline-dark text-dark" texto="Login" type="submit" size="lg" />
 
       {error && <div className="alert alert-danger">{mensaje}</div>}
       {!error && mensaje && (
@@ -87,4 +69,4 @@ const Register = ({ onRegisterSuccess }) => {
   );
 };
 
-export default Register;
+export default Login;
