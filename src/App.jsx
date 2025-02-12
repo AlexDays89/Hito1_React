@@ -4,8 +4,10 @@ import Footer from './components/Footer';
 import Register from './components/Register';
 import Login from './components/Login';
 import { useState } from 'react';
+import Cart from './components/Cart';
 
 function App() {
+  //const [view, setView] = useState('home');
   const [view, setView] = useState('home');
   const [token, setToken] = useState(false);
 
@@ -31,7 +33,8 @@ function App() {
         onLoginLogout={handleLogout}
       />
 
-      {view === 'home' && <Home />}
+      {/* {view === 'home' && <Home />} */}
+      {view === 'home' && <Cart />}
       {view === 'login' && <Login onLoginSuccess={handleLogin} />}
       {view === 'register' && <Register onRegisterSuccess={handleLogin} />}
 

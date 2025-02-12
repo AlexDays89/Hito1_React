@@ -1,6 +1,7 @@
 import Header from './Header';
 import CardPizza from './CardPizza';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { pizzas } from '../utils/pizzas';
 
 function Home() {
   return (
